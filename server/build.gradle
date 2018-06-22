@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "http://repo.maven.apache.org/maven2" }
+        maven { url 'http://repo.spring.io/libs-release' }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+apply from: './gradle/dependencies.gradle'
+
+group = 'com.justandreyb'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+/**
+ * Starting application with "application.yml" and "application-dev.yml" properties
+ */
+task startServer (type: JavaExec, dependsOn: classes){
+    main = "com.justandreyb.timesheets.server.TimesheetsServerApplication"
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = [
+            "-Dspring.profiles.active=dev"
+    ]
+}
+
+/**
+ * Starting application with "application.yml" and "application-prod.yml" properties
+ */
+task startProductionServer (type: JavaExec, dependsOn: classes){
+    main = "com.justandreyb.timesheets.server.TimesheetsServerApplication"
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = [
+            "-Dspring.profiles.active=prod"
+    ]
+}

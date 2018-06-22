@@ -1,0 +1,11 @@
+# IDE
+.idea/
+*.ipr
+
+# Output
+target/
+build/
+out/
+
+# Other
+.gradle/
