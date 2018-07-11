@@ -1,8 +1,12 @@
-task startDocker {
+task startDocker(type: GradleBuild) {
     group 'application'
     description 'Start application with the docker'
+
+    tasks = ['createImages', 'runDockerCompose']
+}
+
+task createImages {
     dependsOn ':timesheets-server:createDockerImage'
-    dependsOn ':docker:runDockerCompose'
 }
 
 task runDockerCompose(type: Exec) {

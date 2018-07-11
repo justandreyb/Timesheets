@@ -21,6 +21,8 @@ jar {
 task createDockerImage(type: Exec) {
     dependsOn clean
     dependsOn build
+    tasks.findByName('build').mustRunAfter 'clean'
+
     group 'Docker'
     description 'Create docker image'
     commandLine 'docker'
