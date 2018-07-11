@@ -31,4 +31,4 @@ Modules:
 # Starting application
 
 **Run app in docker**
- - On linux : `./gradlew startWeb` 
+ - On linux : `./gradlew startDocker` 
