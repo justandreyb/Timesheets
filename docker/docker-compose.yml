@@ -1,0 +1,35 @@
+version: "3"
+services:
+
+  mongodb:
+    container_name: timesheets-database
+    image: mongo:latest
+    hostname: mongo
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/data/logs
+    ports:
+      - 27027:27027
+    volumes:
+      - ../data/db:/app/data/db
+    command: mongod --smallfiles --port 27027
+    networks:
+      - timesheets-network
+
+  timesheets-server:
+    container_name: timesheets-server
+    image: com.justandreyb.timesheets/timesheets-server:latest
+    hostname: timesheets-server
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATA_MONGODB_HOST=timesheets-database
+      - SPRING_DATA_MONGODB_PORT=27027
+    ports:
+      - 8181:8181
+    depends_on:
+      - mongodb
+    networks:
+      - timesheets-network
+
+networks:
+  timesheets-network:

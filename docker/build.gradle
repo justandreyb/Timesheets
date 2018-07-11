@@ -1,0 +1,13 @@
+task startDocker {
+    group 'application'
+    description 'Start application with the docker'
+    dependsOn ':timesheets-server:createDockerImage'
+    dependsOn ':docker:runDockerCompose'
+}
+
+task runDockerCompose(type: Exec) {
+    group 'Docker'
+    description 'Run the docker compose'
+    commandLine 'docker-compose'
+    args = ['up', '--build']
+}
