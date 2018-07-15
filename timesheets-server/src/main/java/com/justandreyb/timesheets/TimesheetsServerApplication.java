@@ -1,12 +1,12 @@
-package com.justandreyb.timesheets.server;
+package com.justandreyb.timesheets;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.justandreyb.timesheets.server.web.TimesheetsWebClient;
+import com.justandreyb.timesheets.web.TimesheetsWebClient;
 
 /**
- * Entry point to the application
+ * Entry point to the application.
  *
  * @author justandreyb
  */

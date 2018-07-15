@@ -1,4 +1,4 @@
-package com.justandreyb.timesheets.server.configuration;
+package com.justandreyb.timesheets.configuration;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;

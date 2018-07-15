@@ -15,7 +15,7 @@ jar {
     baseName = "timesheets-server"
     group    = "${project.group}"
     version  = "${project.version}"
-    manifest { attributes "Main-Class": "com.justandreyb.timesheets.server.TimesheetsServerApplication" }
+    manifest { attributes "Main-Class": "com.justandreyb.timesheets.TimesheetsServerApplication" }
 }
 
 task createDockerImage(type: Exec) {
@@ -36,7 +36,7 @@ task createDockerImage(type: Exec) {
  */
 task startServer (type: JavaExec, dependsOn: classes){
     group 'Server'
-    main = "com.justandreyb.timesheets.server.TimesheetsServerApplication"
+    main = "com.justandreyb.timesheets.TimesheetsServerApplication"
     classpath = sourceSets.main.runtimeClasspath
     jvmArgs = [
             "-Dspring.profiles.active=dev"
@@ -48,7 +48,7 @@ task startServer (type: JavaExec, dependsOn: classes){
  */
 task startProductionServer (type: JavaExec, dependsOn: classes){
     group 'Server'
-    main = "com.justandreyb.timesheets.server.TimesheetsServerApplication"
+    main = "com.justandreyb.timesheets.TimesheetsServerApplication"
     classpath = sourceSets.main.runtimeClasspath
     jvmArgs = [
             "-Dspring.profiles.active=prod"

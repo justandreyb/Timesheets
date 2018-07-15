@@ -1,4 +1,4 @@
-package com.justandreyb.timesheets.server.web.router;
+package com.justandreyb.timesheets.web.router;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import com.justandreyb.timesheets.server.web.handler.ActionHandler;
+import com.justandreyb.timesheets.web.handler.ActionHandler;
 
 @Configuration
 public class ActionRouter {

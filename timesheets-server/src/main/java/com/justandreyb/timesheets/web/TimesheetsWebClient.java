@@ -1,4 +1,4 @@
-package com.justandreyb.timesheets.server.web;
+package com.justandreyb.timesheets.web;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.ClientResponse;
