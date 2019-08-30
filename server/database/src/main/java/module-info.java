@@ -1,0 +1,5 @@
+module database {
+
+    requires model;
+
+}

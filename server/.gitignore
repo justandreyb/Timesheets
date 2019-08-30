@@ -1,0 +1,14 @@
+# IDE
+.idea/
+*.ipr
+
+# Output
+target/
+build/
+out/
+
+# Settings
+custom.properties
+
+# Other
+.gradle/

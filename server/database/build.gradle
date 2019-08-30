@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    implementation project(':model')
+
+    implementation libs.hibernate.core
+    
+    testImplementation libs.hibernate.core
+}
+
+ext.moduleName = 'database'

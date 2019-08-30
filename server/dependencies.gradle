@@ -1,0 +1,21 @@
+/* Manage dependencies */
+
+ext {
+    versions = [
+        spring: "5.1.9.RELEASE",
+        hibernate: "6.0.0.Alpha2"
+    ]
+
+    libs = [
+        spring = [
+            core: "org.springframework:spring-core:${versions.spring}",
+            beans: "org.springframework:spring-beans:${versions.spring}",
+            context: "org.springframework:spring-context:${versions.spring}",
+            tests: "org.springframework:spring-test:${versions.spring}"
+        ],
+
+        hibernate = [
+            core: "org.hibernate:hibernate-core:${versions.hibernate}"
+        ]
+    ]
+}

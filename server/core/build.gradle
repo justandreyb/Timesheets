@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation libs.spring.core
+    implementation libs.spring.beans
+    implementation libs.spring.context
+
+    testImplementation libs.spring.test
+}
+
+ext.moduleName = 'core'
+
