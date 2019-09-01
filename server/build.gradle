@@ -4,6 +4,8 @@ plugins {
     id 'java'
 }
 
+apply from: './dependencies.gradle'
+
 allprojects {
     repositories {
         maven { url "http://repo.maven.apache.org/maven2" }
@@ -11,8 +13,6 @@ allprojects {
         maven { url 'http://repo.spring.io/libs-release' }
     }
 }
-
-apply from: './dependencies.gradle'
 
 subprojects {
     version = '0.0.1'

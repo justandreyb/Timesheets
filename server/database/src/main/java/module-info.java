@@ -1,5 +1,4 @@
 module database {
 
-    requires model;
 
 }

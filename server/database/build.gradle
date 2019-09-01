@@ -5,9 +5,10 @@ plugins {
 dependencies {
     implementation project(':model')
 
-    implementation libs.hibernate.core
-    
-    testImplementation libs.hibernate.core
+    implementation hibernateLibrary.core
+    implementation hikariCPLibrary
+
+    testImplementation hibernateLibrary.core
 }
 
 ext.moduleName = 'database'

@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation libs.hibernate.core
+    implementation hibernateLibrary.core
 }
 
 ext.moduleName = 'model'

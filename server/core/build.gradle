@@ -3,12 +3,37 @@ plugins {
 }
 
 dependencies {
-    implementation libs.spring.core
-    implementation libs.spring.beans
-    implementation libs.spring.context
+    implementation project(':model')
 
-    testImplementation libs.spring.test
+    implementation slf4Library.api
+    implementation logbackLibrary
+    
+    implementation springLibrary.core
+    implementation springLibrary.beans
+    implementation springLibrary.orm
+    implementation springLibrary.context
+
+    implementation h2Library
+    implementation hikariCPLibrary
+    implementation hibernateLibrary.core
+    implementation hibernateLibrary.hikaricp
+
+    testImplementation springLibrary.test
+    testImplementation hibernateLibrary.core
 }
 
 ext.moduleName = 'core'
 
+task runServer(type: JavaExec) {
+    dependsOn clean
+    dependsOn build
+
+    tasks.findByName('build').mustRunAfter 'clean'
+
+    group 'application'
+    main = "com.justandreyb.timesheets.server.TimesheetsServer"
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = [
+            "-Dspring.profiles.active=dev"
+    ]
+}
