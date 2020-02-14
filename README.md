@@ -2,8 +2,7 @@
 Application for managing of your timesheets.
 
 Modules:
- - `docker` - [Docker configs](./docker/README.md)
- - `timesheets-server` - [Server part of application](./timesheets-server/README.md)
+ - `timesheets-server` - [Server part of application](./server/README.md)
 
 # Before start
 
@@ -18,17 +17,5 @@ Modules:
 
 ### Application structure
     .
-    ├── data                    # Folder for mongodb
-    ├── docker                  #
-    ├── gradle                  #
-    ├── timesheets-server       #
-    ├── build.gradle            #
-    ├── settings.gradle         #
-    ├── gradlew                 #
-    ├── gradlew.bat             #
+    ├── server       #
     └── ...
-
-# Starting application
-
-**Run app in docker**
- - On linux : `./gradlew startDocker` 

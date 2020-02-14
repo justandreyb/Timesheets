@@ -9,9 +9,9 @@ import java.time.Instant;
 @Table(name = "activity")
 public class Activity extends DataObject {
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name="userId",referencedColumnName="id")
-    private User user;
+//    @ManyToOne(optional = false)
+//    @JoinColumn(name="userId",referencedColumnName="id")
+//    private User user;
 
     @Column(name = "start_point")
     private Instant startPoint;

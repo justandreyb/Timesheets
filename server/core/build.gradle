@@ -4,19 +4,15 @@ plugins {
 
 dependencies {
     implementation project(':model')
+    implementation project(':database')
+    implementation project(':service')
 
     implementation slf4Library.api
     implementation logbackLibrary
-    
+
     implementation springLibrary.core
     implementation springLibrary.beans
-    implementation springLibrary.orm
     implementation springLibrary.context
-
-    implementation h2Library
-    implementation hikariCPLibrary
-    implementation hibernateLibrary.core
-    implementation hibernateLibrary.hikaricp
 
     testImplementation springLibrary.test
     testImplementation hibernateLibrary.core
@@ -34,6 +30,6 @@ task runServer(type: JavaExec) {
     main = "com.justandreyb.timesheets.server.TimesheetsServer"
     classpath = sourceSets.main.runtimeClasspath
     jvmArgs = [
-            "-Dspring.profiles.active=dev"
+            "-Dspring.profiles.active=h2, hikari-cp-pool"
     ]
 }

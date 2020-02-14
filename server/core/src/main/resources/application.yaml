@@ -1,0 +1,28 @@
+database:
+  source:
+    h2:
+      url: jdbc:h2:mem:timesheets;DB_CLOSE_DELAY=-1
+      username: sa
+      password:
+      driver: org.h2.Driver
+    mySql:
+      url: jdbc:h2:mem:timesheets;DB_CLOSE_DELAY=-1
+      username: sa
+      password:
+      driver: org.h2.Driver
+
+  hibernate:
+    dialect: org.hibernate.dialect.H2Dialect
+    flushMode: AUTO
+    # create-drop | validate | update
+    hbm2ddl.auto: update
+    showSql: false
+    formatSql: false
+    generateStatistic: false
+
+  pool:
+    hikariCp:
+      poolName: TimesheetsDatabaseConnectionsPool
+      connectionTestQuery: SELECT 1
+      maximumPoolSize: 3
+      connectionTimeout: 30000

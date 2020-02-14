@@ -16,8 +16,8 @@ public abstract class DataObject implements Serializable {
 
     @Id
     @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid2", strategy = "uuid")
-    @Column(columnDefinition = "CHAR(32)", nullable = false, unique = true)
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Column(columnDefinition = "CHAR(36)", nullable = false, unique = true)
     private String id;
 
     public DataObject() {

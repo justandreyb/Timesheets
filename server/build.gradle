@@ -6,11 +6,17 @@ plugins {
 
 apply from: './dependencies.gradle'
 
+idea{
+    module{
+        inheritOutputDirs = true
+    }
+}
+
 allprojects {
     repositories {
-        maven { url "http://repo.maven.apache.org/maven2" }
+        maven { url "https://repo.maven.apache.org/maven2" }
         maven { url "https://plugins.gradle.org/m2/" }
-        maven { url 'http://repo.spring.io/libs-release' }
+        maven { url 'https://repo.spring.io/libs-release' }
     }
 }
 

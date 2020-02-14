@@ -3,12 +3,11 @@ module core {
     requires org.slf4j;
     requires spring.core;
     requires spring.beans;
-    requires spring.orm;
     requires spring.context;
-    requires com.zaxxer.hikari;
-    requires org.hibernate.orm.core;
 
     requires model;
+    requires database;
+    requires service;
 
     opens com.justandreyb.timesheets.server.config;
 }

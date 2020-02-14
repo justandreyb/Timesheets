@@ -1,27 +1,28 @@
 /* Manage dependencies */
 
 ext {
-    springLibraryVersion = "5.1.9.RELEASE"
+    springLibraryVersion = "5.2.3.RELEASE"
     springLibrary = [
         core: "org.springframework:spring-core:${springLibraryVersion}",
         beans: "org.springframework:spring-beans:${springLibraryVersion}",
         orm: "org.springframework:spring-orm:${springLibraryVersion}",
         context: "org.springframework:spring-context:${springLibraryVersion}",
+        tx: "org.springframework:spring-tx:${springLibraryVersion}",
         test: "org.springframework:spring-test:${springLibraryVersion}"
     ]
 
     // Connections pool
-    hikariCPLibraryVersion = "3.3.1"
+    hikariCPLibraryVersion = "3.4.2"
     hikariCPLibrary = "com.zaxxer:HikariCP:${hikariCPLibraryVersion}"
-    
-    hibernateLibraryVersion = "5.4.4.Final"
+
+    hibernateLibraryVersion = "5.4.11.Final"
     hibernateLibrary = [
         core: "org.hibernate:hibernate-core:${hibernateLibraryVersion}",
         hikaricp: "org.hibernate:hibernate-hikaricp:${hibernateLibraryVersion}"
     ]
 
     // Logging
-    slf4LibraryVersion = "1.7.28"
+    slf4LibraryVersion = "1.7.30"
     slf4Library = [
         api: "org.slf4j:slf4j-api:${slf4LibraryVersion}"
     ]
@@ -29,6 +30,6 @@ ext {
     logbackLibrary = "ch.qos.logback:logback-classic:${logbackLibraryVersion}"
 
     // Database
-    h2LibraryVersion = "1.4.199"
+    h2LibraryVersion = "1.4.200"
     h2Library = "com.h2database:h2:${h2LibraryVersion}"
 }

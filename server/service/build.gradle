@@ -5,15 +5,15 @@ plugins {
 dependencies {
     implementation project(":model")
 
+    implementation slf4Library.api
+
     implementation springLibrary.core
     implementation springLibrary.beans
     implementation springLibrary.orm
     implementation springLibrary.context
+    implementation springLibrary.tx
 
-    implementation h2Library
-    implementation hikariCPLibrary
     implementation hibernateLibrary.core
-    implementation hibernateLibrary.hikaricp
 }
 
-ext.moduleName = 'database'
+ext.moduleName = 'service'
